@@ -69,6 +69,24 @@ const config: HardhatUserConfig = {
       polygon: process.env.POLYGONSCAN_API_KEY || "",
       polygonMumbai: process.env.POLYGONSCAN_API_KEY || "",
     },
+    customChains: [
+      {
+        network: "rinkeby",
+        chainId: 4,
+        urls: {
+          apiURL: "http://api-rinkeby.etherscan.io/api",  // https => http
+          browserURL: "https://rinkeby.etherscan.io"
+        }
+      },
+      {
+        network: 'goerli',
+        chainId: 5,
+        urls: {
+          apiURL: 'http://api-goerli.etherscan.io/api',  // https => http
+          browserURL: 'https://goerli.etherscan.io',
+        },
+      },
+    ]
   },
   gasReporter: {
     currency: "USD",
